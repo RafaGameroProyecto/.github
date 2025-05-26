@@ -178,6 +178,15 @@ GET http://localhost:8087/api/readings/requiring-action
 - [ ] **Containerización Docker**
 - [ ] **Dashboard de métricas**
 
+## 📎 Recursos del Proyecto
+
+- 🎨 **Presentación en Canva**:  
+  [https://www.canva.com/design/DAGojYIwmhU/zPG2SRVziUawiQSkjmRYTg/edit?utm_content=DAGojYIwmhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAGojYIwmhU/zPG2SRVziUawiQSkjmRYTg/edit?utm_content=DAGojYIwmhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+- ✅ **Tablero del Proyecto en Trello**:  
+  [https://trello.com/b/Nvasa05F/proyecto-bomba-insulina](https://trello.com/b/Nvasa05F/proyecto-bomba-insulina)
+
+ 
 ## 👨‍💻 Desarrollador
 
 **Rafael Gamero Arrabal**  
