@@ -153,17 +153,7 @@ GET http://localhost:8087/api/readings/requiring-action
 - Tolerancia a fallos
 - Monitoreo centralizado
 
-## 📁 Estructura del Proyecto
 
-```
-insulin-pump-microservices/
-├── eureka-server/           # Service Discovery
-├── gateway-service/         # API Gateway
-├── patient-service/         # Gestión de pacientes
-├── device-service/          # Gestión de dispositivos
-├── reading-service/         # Monitoreo de glucosa
-├── postman-collections/     # APIs para testing
-└── README.md               # Documentación principal
 ```
 
 ## 🎯 Beneficios del Sistema
@@ -197,9 +187,9 @@ insulin-pump-microservices/
 
 🏥 **Sistema desarrollado para mejorar la atención médica de pacientes diabéticos**
 
-🌐 Portfolio: [tu-portfolio.com]
 
-📱 GitHub: [@rafael-gamero]
+
+📱 GitHub: [https://github.com/Rafa-Gamero]
 
 ⭐ Agradecimientos
 Gracias por revisar este sistema de microservicios. Si te ha resultado útil, ¡no olvides dar una estrella al repositorio!
