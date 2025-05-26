@@ -1,450 +1,201 @@
-🏥 Sistema de Microservicios para Bombas de Insulina
-Sistema completo de monitoreo y gestión de bombas de insulina para pacientes diabéticos, desarrollado con arquitectura de microservicios y API Gateway.
+# 🏥 Sistema de Microservicios para Bombas de Insulina
 
-📋 Descripción General
-Este sistema permite a hospitales y clínicas gestionar de manera integral pacientes diabéticos con bombas de insulina, proporcionando monitoreo en tiempo real, alertas automáticas y análisis estadísticos para optimizar el tratamiento médico.
+Sistema de monitoreo y gestión de bombas de insulina para pacientes diabéticos desarrollado con **Spring Boot** y **arquitectura de microservicios**.
 
-## 🏗️ Arquitectura del Sistema
+## 🚀 Descripción
+
+Plataforma médica que permite a hospitales monitorear pacientes diabéticos en tiempo real, gestionar dispositivos y generar alertas automáticas para emergencias médicas.
+
+## 🏗️ Arquitectura
 
 ```
-                              ┌─────────────────────────────────────┐
-                              │           Frontend Web             │
-                              │        (React/Angular)             │
-                              └──────────────┬──────────────────────┘
-                                             │
-                              ┌──────────────▼──────────────────────┐
-                              │         API Gateway                 │
-                              │        Port: 8087                   │
-                              │    (Spring Cloud Gateway)          │
-                              └──────────────┬──────────────────────┘
-                                             │
-                    ┌────────────────────────┼────────────────────────┐
-                    │                        │                        │
-        ┌───────────▼───────────┐ ┌──────────▼──────────┐ ┌──────────▼──────────┐
-        │   Patient Service     │ │   Device Service    │ │   Reading Service   │
-        │     Port: 8081        │ │     Port: 8082      │ │     Port: 8083      │
-        │  (Gestión Pacientes)  │ │ (Gestión Bombas)    │ │(Monitoreo Glucosa)  │
-        └───────────┬───────────┘ └──────────┬──────────┘ └──────────┬──────────┘
-                    │                        │                        │
-                    └────────────────────────┼────────────────────────┘
-                                             │
-                              ┌──────────────▼──────────────────────┐
-                              │         Eureka Server               │
-                              │          Port: 8761                 │
-                              │      (Service Discovery)            │
-                              └──────────────┬──────────────────────┘
-                                             │
-                              ┌──────────────▼──────────────────────┐
-                              │            MySQL                    │
-                              │          Port: 3306                 │
-                              │     (pacientes, dispositivos,       │
-                              │           lecturas)                 │
-                              └─────────────────────────────────────┘
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   API Gateway   │    │   Patient       │    │   Device        │    │   Reading       │
+│   Port: 8087    │◄──►│   Service       │    │   Service       │    │   Service       │
+│  (Enrutamiento) │    │   Port: 8081    │    │   Port: 8082    │    │   Port: 8083    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │                       │
+         └───────────────────────┼───────────────────────┼───────────────────────┘
+                                 │
+                    ┌─────────────▼─────────────┐
+                    │      Eureka Server        │
+                    │       Port: 8761          │
+                    └─────────────┬─────────────┘
+                                 │
+                    ┌─────────────▼─────────────┐
+                    │        MySQL              │
+                    │       Port: 3306          │
+                    └───────────────────────────┘
 ```
 
+## 🛠️ Tecnologías
 
+- **Java 21** + **Spring Boot 3.4.5**
+- **Spring Cloud Gateway** (API Gateway)
+- **Spring Cloud Eureka** (Service Discovery)
+- **MySQL 8.0** (Base de datos)
+- **OpenFeign** (Comunicación entre servicios)
+- **JUnit 5** + **Mockito** (Testing)
 
-🚀 Microservicios
-🌐 Gateway Service (Puerto 8087)
-API Gateway Centralizado
+## 📦 Microservicios
 
-Punto único de entrada al sistema
+| Servicio | Puerto | Función | Endpoint Principal |
+|----------|--------|---------|-------------------|
+| **🌐 Gateway** | 8087 | Enrutamiento y balanceador | `http://localhost:8087` |
+| **👥 Patient** | 8081 | Gestión de pacientes | `/api/patients` |
+| **📦 Device** | 8082 | Gestión de bombas | `/api/devices` |
+| **📊 Reading** | 8083 | Monitoreo de glucosa | `/api/readings` |
+| **🗺️ Eureka** | 8761 | Service discovery | `http://localhost:8761` |
 
-Enrutamiento inteligente y balanceador de carga
+## ⚡ Inicio Rápido
 
-CORS y logging centralizado
+### 1. Prerequisitos
+```bash
+Java 21+, Maven 3.8+, MySQL 8.0+
+```
 
-Service discovery integrado
+### 2. Configurar Base de Datos
+```sql
+CREATE DATABASE pacientes;
+CREATE DATABASE dispositivos;
+CREATE DATABASE lecturas;
+```
 
-👥 Patient Service (Puerto 8081)
-Gestión de Pacientes Diabéticos
+### 3. Ejecutar Servicios (en orden)
 
-Registro y actualización de pacientes
+# 1. Eureka Server
 
-Información médica completa
 
-Asignación de dispositivos
+# 2. Gateway
 
-Contactos de emergencia
 
-📦 Device Service (Puerto 8082)
-Gestión de Bombas de Insulina
+# 3. Microservicios (en paralelo)
 
-Registro de dispositivos médicos
+```
 
-Control de estados operativos
+### 4. Verificar
+- **Dashboard:** http://localhost:8761
+- **API Gateway:** http://localhost:8087
+- **Health Check:** http://localhost:8087/actuator/health
 
-Configuraciones técnicas
+## 📋 Casos de Uso Principales
 
-Historial de mantenimiento
-
-📊 Reading Service (Puerto 8083)
-Monitoreo de Glucosa en Tiempo Real
-
-Lecturas automáticas y manuales
-
-Clasificación automática de estados
-
-Alertas para emergencias médicas
-
-Estadísticas y análisis
-
-🗺️ Eureka Server (Puerto 8761)
-Service Discovery
-
-Registro automático de servicios
-
-Load balancing
-
-Health monitoring
-
-Service discovery
-
-🛠️ Stack Tecnológico
-Backend
-
-Java 21 - Lenguaje de programación
-
-Spring Boot 3.4.5 - Framework principal
-
-Spring Cloud Gateway - API Gateway
-
-Spring Cloud Netflix Eureka - Service discovery
-
-Spring Data JPA - Persistencia de datos
-
-OpenFeign - Comunicación entre servicios
-
-MySQL 8.0 - Base de datos relacional
-
-Herramientas
-
-Maven - Gestión de dependencias
-
-Lombok - Reducción de código boilerplate
-
-Bean Validation - Validación de datos
-
-SLF4J - Logging
-
-JUnit 5 - Testing
-
-Mockito - Mocking para tests
-
-📊 Base de Datos
-Estructura por Microservicio
-
-pacientes - Patient Service
-
-dispositivos - Device Service
-
-lecturas - Reading Service
-
-Patrón Database per Service
-Cada microservicio mantiene su propia base de datos, garantizando:
-
-✅ Independencia de datos
-✅ Escalabilidad individual
-✅ Tolerancia a fallos
-✅ Tecnologías específicas por servicio
-
-🚀 Instalación y Ejecución
-Prerequisitos
-
-Java 21+
-
-Maven 3.8+
-
-MySQL 8.0+
-
-Git
-
-Clonar el Repositorio
-
-git clone [URL_DEL_REPOSITORIO]
-cd insulin-pump-microservices
-
-Configurar MySQL
-
--- Crear las bases de datos
-CREATE DATABASE pacientes CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE DATABASE dispositivos CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE DATABASE lecturas CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
--- Crear usuario (opcional)
-CREATE USER 'insulin_user'@'localhost' IDENTIFIED BY '1234';
-GRANT ALL PRIVILEGES ON pacientes.* TO 'insulin_user'@'localhost';
-GRANT ALL PRIVILEGES ON dispositivos.* TO 'insulin_user'@'localhost';
-GRANT ALL PRIVILEGES ON lecturas.* TO 'insulin_user'@'localhost';
-FLUSH PRIVILEGES;
-
-Ejecutar en Orden (IMPORTANTE)
-
-# 1. Eureka Server (Service Discovery)
-cd eureka-server
-mvn spring-boot:run
-
-# 2. Gateway Service (API Gateway)
-cd ../gateway-service
-mvn spring-boot:run
-
-# 3. Patient Service
-cd ../patient-service
-mvn spring-boot:run
-
-# 4. Device Service  
-cd ../device-service
-mvn spring-boot:run
-
-# 5. Reading Service
-cd ../reading-service
-mvn spring-boot:run
-
-Verificar el Sistema
-
-Eureka Dashboard: http://localhost:8761
-
-Gateway Health: http://localhost:8087/actuator/health
-
-Patient Service: http://localhost:8087/api/patients
-
-Device Service: http://localhost:8087/api/devices
-
-Reading Service: http://localhost:8087/api/readings
-
-🌐 Acceso a través del Gateway (RECOMENDADO)
-| Servicio | URL Gateway                        | Puerto Directo                      |
-| :------- | :--------------------------------- | :---------------------------------- |
-| Patient  | http://localhost:8087/api/patients | http://localhost:8081/api/patients |
-| Device   | http://localhost:8087/api/devices  | http://localhost:8082/api/devices  |
-| Reading  | http://localhost:8087/api/readings | http://localhost:8083/api/readings |
-
-Ventajas del Gateway
-✅ Punto único de entrada
-✅ Balanceador de carga automático
-✅ CORS configurado
-✅ Logging centralizado
-✅ Enrutamiento inteligente
-
-📋 Casos de Uso Principales
-🏥 Flujo Médico Completo (usando Gateway)
-
-Registro de Paciente
+### 🏥 Flujo Médico Típico
+```http
+# 1. Crear Paciente
 POST http://localhost:8087/api/patients
-
 {
-  "name": "Juan Carlos Pérez",
-  "medicalId": "MED123456",
-  "diabetesType": "Tipo 1",
-  "hba1cLevel": 7.2
+  "name": "Juan Pérez",
+  "medicalId": "MED123",
+  "diabetesType": "Tipo 1"
 }
 
-Registro de Dispositivo
+# 2. Crear Dispositivo
 POST http://localhost:8087/api/devices
-
 {
   "serialNo": "DEV001",
-  "model": "InsulinPump Pro 2024",
-  "maxBasalRate": 5.0,
-  "reservoirCapacity": 300
+  "model": "InsulinPump Pro",
+  "maxBasalRate": 5.0
 }
 
-Asignación Dispositivo-Paciente
+# 3. Asignar Dispositivo
 PUT http://localhost:8087/api/devices/1/assign/1
 
-Monitoreo de Glucosa
+# 4. Registrar Lectura
 POST http://localhost:8087/api/readings
-
 {
   "glucoseLevel": 280.0,  // Crítico Alto
-  "deviceId": 1,
-  "notes": "Emergencia médica detectada"
+  "deviceId": 1
 }
 
-Consulta de Alertas
+# 5. Consultar Alertas
 GET http://localhost:8087/api/readings/requiring-action
-
-🔍 Testing
-Ejecutar Tests por Servicio
-
-# Gateway Service
-cd gateway-service && mvn test
-
-# Patient Service
-cd patient-service && mvn test
-
-# Device Service  
-cd device-service && mvn test
-
-# Reading Service
-cd reading-service && mvn test
-
-Coverage Report
-mvn test jacoco:report
-
-📊 Monitoreo y Métricas
-Health Checks
-
-Gateway: http://localhost:8087/actuator/health
-
-Patient: http://localhost:8081/actuator/health
-
-Device: http://localhost:8082/actuator/health
-
-Reading: http://localhost:8083/actuator/health
-
-Eureka Dashboard
-http://localhost:8761
-
-Gateway Routes
-http://localhost:8087/actuator/gateway/routes
-
-Logs
-Cada servicio genera logs detallados para:
-
-Operaciones CRUD
-
-Comunicación entre servicios
-
-Errores y excepciones
-
-Métricas de performance
-
-🔒 Características de Seguridad
-Validación de Datos
-
-Bean Validation en todos los endpoints
-
-Validación de formatos médicos
-
-Sanitización de entradas
-
-Manejo de Errores
-
-Global Exception Handlers
-
-Respuestas de error estructuradas
-
-Logging de errores para auditoría
-
-Comunicación Segura
-
-Validación de servicios a través de Eureka
-
-Timeouts configurables en Feign
-
-Retry automático en fallos
-
-CORS configurado en Gateway
-
-🚨 Alertas Médicas Críticas
-Emergencias Automáticas
-
-Hipoglucemia Severa: < 50 mg/dL
-
-Hiperglucemia Crítica: > 250 mg/dL
-
-Fallas de Dispositivo: Sin lecturas por tiempo prolongado
-
-Notificaciones
-
-Marcado automático de requiresAction = true
-
-Endpoint dedicado para lecturas críticas
-
-Logs de alta prioridad para emergencias
-
-📈 Estadísticas y Reportes
-Métricas Disponibles
-
-Promedio de glucosa por período
-
-Desviación estándar
-
-Conteo de lecturas por categoría
-
-Tendencias temporales
-
-Períodos de Análisis
-
-Diario
-
-Semanal
-
-Mensual
-
-Personalizado
-
-🔄 Escalabilidad
-Horizontal
-
-Múltiples instancias por servicio
-
-Load balancing automático vía Gateway
-
-Base de datos distribuida
-
-Service discovery automático
-
-Vertical
-
-Configuración de memoria por servicio
-
-Optimización de queries JPA
-
-Connection pooling optimizado
-
-🚀 Despliegue
-Desarrollo
-
-
-
-🎯 Roadmap Futuro
-Próximas Funcionalidades
-
-
-Integraciones
-
-[ ] HL7 FHIR para interoperabilidad
-
-[ ] Sistemas hospitalarios existentes
-
-[ ] Aplicaciones móviles para pacientes
-
-[ ] Wearables y sensores IoT
-
-📚 Documentación Adicional
-
-Gateway Service Documentation
-
-Patient Service Documentation
-
-Device Service Documentation
-
-Reading Service Documentation
-
-API Collections
-
-Database Schema
-
-🤝 Contribución
-
-Fork el proyecto
-
-Crear feature branch (git checkout -b feature/nueva-funcionalidad)
-
-Commit cambios (git commit -am 'Añadir nueva funcionalidad')
-
-Push branch (git push origin feature/nueva-funcionalidad)
-
-Crear Pull Request
-
-📄 Licencia
-Este proyecto está bajo la Licencia MIT. Ver LICENSE para más detalles.
-
-👨‍💻 Desarrollador
-Rafael Gamero Arrabal
-📧 Email: [rafael.gamero@email.com]
+```
+
+## 🚨 Características Médicas
+
+### Estados de Glucosa Automáticos
+- **🟢 NORMAL**: 70-180 mg/dL
+- **🟡 LOW/HIGH**: 50-70 / 180-250 mg/dL
+- **🔴 CRITICAL**: <50 / >250 mg/dL ⚠️ **Requiere Acción**
+
+### Funcionalidades Clave
+- ✅ **Monitoreo 24/7** en tiempo real
+- ✅ **Alertas automáticas** para emergencias
+- ✅ **Estadísticas médicas** (promedio, desviación estándar)
+- ✅ **Historial completo** de lecturas
+- ✅ **Gestión centralizada** de dispositivos
+
+
+```
+
+## 📊 Monitoreo
+
+| Tipo | URL |
+|------|-----|
+| **Eureka Dashboard** | http://localhost:8761 |
+| **Gateway Health** | http://localhost:8087/actuator/health |
+| **Gateway Routes** | http://localhost:8087/actuator/gateway/routes |
+| **Métricas** | http://localhost:8087/actuator/metrics |
+
+## 🔄 Escalabilidad
+
+### Ventajas de la Arquitectura
+- **🌐 API Gateway**: Punto único de entrada
+- **⚖️ Load Balancing**: Distribución automática de carga
+- **🔍 Service Discovery**: Registro automático de servicios
+- **💾 Database per Service**: Independencia de datos
+- **🔧 Microservicios**: Escalado independiente
+
+### Producción
+- Múltiples instancias por servicio
+- Balanceador de carga automático
+- Tolerancia a fallos
+- Monitoreo centralizado
+
+## 📁 Estructura del Proyecto
+
+```
+insulin-pump-microservices/
+├── eureka-server/           # Service Discovery
+├── gateway-service/         # API Gateway
+├── patient-service/         # Gestión de pacientes
+├── device-service/          # Gestión de dispositivos
+├── reading-service/         # Monitoreo de glucosa
+├── postman-collections/     # APIs para testing
+└── README.md               # Documentación principal
+```
+
+## 🎯 Beneficios del Sistema
+
+### Para Hospitales
+- ✅ **Monitoreo centralizado** de pacientes
+- ✅ **Alertas en tiempo real** para emergencias
+- ✅ **Optimización de recursos** médicos
+- ✅ **Integración fácil** con sistemas existentes
+
+### Para Pacientes
+- ✅ **Monitoreo 24/7** automático
+- ✅ **Respuesta rápida** en emergencias
+- ✅ **Historial médico** completo
+- ✅ **Mejor calidad** de vida
+
+## 🚀 Próximos Pasos
+
+- [ ] **Frontend Web** con React
+- [ ] **Autenticación JWT**
+- [ ] **Notificaciones Push**
+- [ ] **Containerización Docker**
+- [ ] **Dashboard de métricas**
+
+## 👨‍💻 Desarrollador
+
+**Rafael Gamero Arrabal**  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rafael-gamero-arrabal-619200186/)
+
+---
+
+🏥 **Sistema desarrollado para mejorar la atención médica de pacientes diabéticos**
 
 🌐 Portfolio: [tu-portfolio.com]
 
