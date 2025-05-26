@@ -63,13 +63,11 @@ CREATE DATABASE lecturas;
 
 ### 3. Ejecutar Servicios (en orden)
 
-# 1. Eureka Server
+    1. Eureka Server
 
+    2. Gateway
 
-# 2. Gateway
-
-
-# 3. Microservicios (en paralelo)
+    3. Microservicios (en paralelo)
 
 ```
 
