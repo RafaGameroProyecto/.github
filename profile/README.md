@@ -127,14 +127,7 @@ GET http://localhost:8087/api/readings/requiring-action
 
 ```
 
-## 📊 Monitoreo
 
-| Tipo | URL |
-|------|-----|
-| **Eureka Dashboard** | http://localhost:8761 |
-| **Gateway Health** | http://localhost:8087/actuator/health |
-| **Gateway Routes** | http://localhost:8087/actuator/gateway/routes |
-| **Métricas** | http://localhost:8087/actuator/metrics |
 
 ## 🔄 Escalabilidad
 
