@@ -50,9 +50,9 @@ Plataforma médica que permite a hospitales monitorear pacientes diabéticos en 
 ## ⚡ Inicio Rápido
 
 ### 1. Prerequisitos
-```bash
+
 Java 21+, Maven 3.8+, MySQL 8.0+
-```
+
 
 ### 2. Configurar Base de Datos
 ```sql
@@ -69,7 +69,7 @@ CREATE DATABASE lecturas;
 
     3. Microservicios (en paralelo)
 
-```
+
 
 ### 4. Verificar
 - **Dashboard:** http://localhost:8761
