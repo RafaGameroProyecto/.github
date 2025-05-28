@@ -28,6 +28,10 @@ Plataforma médica que permite a hospitales monitorear pacientes diabéticos en 
                     └───────────────────────────┘
 ```
 
+## 🧬 Modelo de Datos (UML)
+
+![Diagrama UML](https://github.com/RafaGameroProyecto/.github/blob/main/Captura%20de%20pantalla%202025-05-22%20102324.png?raw=true)
+
 ## 🛠️ Tecnologías
 
 - **Java 21** + **Spring Boot 3.4.5**
