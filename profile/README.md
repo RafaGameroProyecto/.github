@@ -125,27 +125,28 @@ GET http://localhost:8087/api/readings/requiring-action
 - ✅ **Gestión centralizada** de dispositivos
 
 
-```
+
 
 
 
 ## 🔄 Escalabilidad
 
 ### Ventajas de la Arquitectura
-- **🌐 API Gateway**: Punto único de entrada
-- **⚖️ Load Balancing**: Distribución automática de carga
-- **🔍 Service Discovery**: Registro automático de servicios
-- **💾 Database per Service**: Independencia de datos
-- **🔧 Microservicios**: Escalado independiente
+- ✅ **🌐 API Gateway**: Punto único de entrada  
+- ✅ **⚖️ Load Balancing**: Distribución automática de carga  
+- ✅ **🔍 Service Discovery**: Registro automático de servicios  
+- ✅ **💾 Database per Service**: Independencia de datos  
+- ✅ **🔧 Microservicios**: Escalado independiente  
 
 ### Producción
-- Múltiples instancias por servicio
-- Balanceador de carga automático
-- Tolerancia a fallos
-- Monitoreo centralizado
+- ✅ **Múltiples instancias por servicio**  
+- ✅ **Balanceador de carga automático**  
+- ✅ **Tolerancia a fallos**  
+- ✅ **Monitoreo centralizado**
 
 
-```
+
+
 
 ## 🎯 Beneficios del Sistema
 
