@@ -78,7 +78,7 @@ CREATE DATABASE lecturas;
 ### 4. Verificar
 - **Dashboard:** http://localhost:8761
 - **API Gateway:** http://localhost:8087
-- **Health Check:** http://localhost:8087/actuator/health
+
 
 ## 📋 Casos de Uso Principales
 
