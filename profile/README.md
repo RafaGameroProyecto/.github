@@ -171,11 +171,9 @@ GET http://localhost:8087/api/readings/requiring-action
 
 ## 📎 Recursos del Proyecto
 
-- 🎨 **Presentación en Canva**:  
-  [https://www.canva.com/design/DAGojYIwmhU/zPG2SRVziUawiQSkjmRYTg/edit?utm_content=DAGojYIwmhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton](https://www.canva.com/design/DAGojYIwmhU/zPG2SRVziUawiQSkjmRYTg/edit?utm_content=DAGojYIwmhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[![🎨 Ver Presentación en Canva](https://img.shields.io/badge/Canva-Presentación-blueviolet?style=for-the-badge&logo=canva)](https://www.canva.com/design/DAGojYIwmhU/zPG2SRVziUawiQSkjmRYTg/edit?utm_content=DAGojYIwmhU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-- ✅ **Tablero del Proyecto en Trello**:  
-  [https://trello.com/b/Nvasa05F/proyecto-bomba-insulina](https://trello.com/b/Nvasa05F/proyecto-bomba-insulina)
+[![✅ Ver Tablero en Trello](https://img.shields.io/badge/Trello-Tablero%20de%20Proyecto-0099cc?style=for-the-badge&logo=trello&logoColor=white)](https://trello.com/b/Nvasa05F/proyecto-bomba-insulina)
 
  
 ## 👨‍💻 Desarrollador
