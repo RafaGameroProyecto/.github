@@ -161,6 +161,17 @@ GET http://localhost:8087/api/readings/requiring-action
 - ✅ **Historial médico** completo
 - ✅ **Mejor calidad** de vida
 
+## 🧪 Colección de Pruebas Postman
+
+Se incluye una colección de pruebas con escenarios reales para validar todo el sistema:
+
+- 🧒 Paciente pediátrico  
+- 👴 Paciente senior  
+- 🚨 Emergencias  
+- 🛠️ Gestión de dispositivos  
+- 📊 Análisis de datos  
+- ❌ Validaciones y errores
+
 ## 🚀 Próximos Pasos
 
 - [ ] **Frontend Web** con React
