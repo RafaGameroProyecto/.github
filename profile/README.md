@@ -187,7 +187,8 @@ GET http://localhost:8087/api/readings/requiring-action
 
 
 
-📱 GitHub: [https://github.com/Rafa-Gamero]
+[![📱 Ver Perfil en GitHub](https://img.shields.io/badge/GitHub-Rafa--Gamero-181717?style=for-the-badge&logo=github)](https://github.com/Rafa-Gamero)
+
 
 ⭐ Agradecimientos
 Gracias por revisar este sistema de microservicios. Si te ha resultado útil, ¡no olvides dar una estrella al repositorio!
