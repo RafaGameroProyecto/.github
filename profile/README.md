@@ -163,14 +163,27 @@ GET http://localhost:8087/api/readings/requiring-action
 
 ## 🧪 Colección de Pruebas Postman
 
-Se incluye una colección de pruebas con escenarios reales para validar todo el sistema:
+Se incluye una colección avanzada con pruebas realistas para validar el sistema completo:
 
 - 🧒 Paciente pediátrico  
 - 👴 Paciente senior  
-- 🚨 Emergencias  
+- 🚨 Situaciones de emergencia  
 - 🛠️ Gestión de dispositivos  
-- 📊 Análisis de datos  
-- ❌ Validaciones y errores
+- 📊 Estadísticas y análisis  
+- ❌ Casos de error y validaciones
+
+### 🔧 Instrucciones
+
+1. Asegúrate de tener todos los microservicios corriendo en `http://localhost:8087`.
+2. Descarga la colección y ábrela en [Postman](https://www.postman.com/).
+3. Ejecuta los circuitos de pruebas según el flujo deseado.
+
+### 📥 Descargar Colección
+
+📄 [Descargar colección Postman (JSON)](https://github.com/RafaGameroProyecto/.github/blob/main/Insulin%20Pump%20-%20Circuito%20de%20Pruebas%20Avanzado.postman_collection.json?raw=true)
+
+> También puedes importar este archivo directamente en Postman arrastrándolo a tu espacio de trabajo o usando la opción **"Import" → "Link/File"**.
+
 
 ## 🚀 Próximos Pasos
 
