@@ -130,9 +130,6 @@ GET http://localhost:8087/api/readings/requiring-action
 
 
 
-
-
-
 ## 🔄 Escalabilidad
 
 ### Ventajas de la Arquitectura
@@ -147,8 +144,6 @@ GET http://localhost:8087/api/readings/requiring-action
 - ✅ **Balanceador de carga automático**  
 - ✅ **Tolerancia a fallos**  
 - ✅ **Monitoreo centralizado**
-
-
 
 
 
