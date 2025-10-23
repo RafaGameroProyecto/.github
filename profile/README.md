@@ -53,7 +53,7 @@ Plataforma médica que permite a hospitales monitorear pacientes diabéticos en 
 
 ## ⚡ Inicio Rápido
 
-### 1. Prerequisitos
+### 1. Prerrequisitos
 
 Java 21+, Maven 3.8+, MySQL 8.0+
 
